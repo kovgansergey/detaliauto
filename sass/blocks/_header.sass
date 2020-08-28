@@ -1,0 +1,110 @@
+.header
+  padding-top: 39px
+  padding-bottom: 85px
+  background: url(../img/header/header-bg.png) no-repeat
+  background-position: calc(50% + 300px)
+  background-size: contain
+  &-contacts
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__logo img
+      width: 100%
+    &__phone
+      display: flex
+      align-items: center
+      &-img
+        margin-right: 15px
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 49px
+        height: 49px
+        border-radius: 50%
+        background-color: #fff
+      &-links
+        display: flex
+        flex-direction: column
+        & a
+          color: #fff
+        & .phone_number
+          +bold
+          font-size: 18px
+          text-decoration: none
+  &-content
+    margin-top: 80px
+    &__title
+      margin-bottom: 30px
+    & p
+      font-size: 16px
+    &_data
+      margin-top: 65px
+      display: flex
+      &-item
+        margin-right: 80px
+        & .number
+          +bold
+          font-size: 35px
+        & p
+          margin-top: 6px
+    &_btn
+      margin-top: 70px
+      width: 360px
+      height: 50px
+// @media (max-width: 1199px)
+@media (max-width: 991px)
+  .header
+    background-position: calc(50% + 240px)
+    &-content
+      margin-top: 55px
+      &__title
+        margin-bottom: 20px
+      & p
+        font-size: 14px
+      &_data
+        margin-top: 30px
+        &-item
+          margin-right: 55px
+          & .number
+            font-size: 27px
+      &_btn
+        margin-top: 40px
+@media (max-width: 767px)
+  .header
+    padding: 30px 0
+    background: none
+    &-contacts
+      &__logo
+        width: 180px
+      &__phone
+        &-img
+          width: auto
+          height: auto
+        &-links
+          & a
+            color: $main-blue
+          & .phone_number
+            font-size: 14px
+          & .call
+            display: none
+@media (max-width: 566px)
+  .header
+    &-contacts
+      &__logo
+        width: 140px
+      &__phone
+        &-img
+          display: none
+    &-content
+      margin-top: 30px
+      &_data
+        margin-top: 15px
+        &-item
+          margin-right: 20px
+          &:last-child
+            margin-right: 0
+          & .number
+            font-size: 22px
+      &_btn
+        margin-top: 30px
+        width: 100%

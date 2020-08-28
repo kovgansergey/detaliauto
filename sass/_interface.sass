@@ -1,20 +1,52 @@
 *
 	box-sizing: border-box
+	margin: 0
+	padding: 0
 body
 	+reg
+	color: #000
+	font-size: 14px
+h1,h2
+	margin: 0
 .container
-	width: 1170px
+	width: 1140px
 	margin: auto
-// @media (min-width: 992px)
+.main-title
+	+bold
+	font-size: 45px
+.line::after
+	content: ''
+	display: block
+	width: 60px
+	height: 6px
+	background-color: $main-orange
+.btn
+	color: #fff
+	font-size: 12px
+	text-transform: uppercase
+	letter-spacing: 1.2px
+	border-radius: 10px
+	background-color: $main-blue
+	border: none
+	outline: none
+	cursor: pointer
+@media (min-width: 992px)
+	.btn
+		&:hover
+			background-color: lighten($main-blue, 5)
 @media (max-width: 1199px)
 	.container
 		width: 960px
 @media (max-width: 991px)
 	.container
 		width: 720px
+	.main-title
+		font-size: 32px
 @media (max-width: 767px)
 	.container
 		width: 540px
 @media (max-width: 566px)
 	.container
 		max-width: 300px
+	.main-title
+		font-size: 24px

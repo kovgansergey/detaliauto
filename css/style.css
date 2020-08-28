@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  font-display: auto;
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  font-display: auto;
+  src: url("../fonts/Roboto-Bold.eot");
+  src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Regular', sans-serif;
+  color: #000;
+  font-size: 14px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
+
+.main-title {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 45px;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 6px;
+  background-color: #ff5f21;
+}
+
+.btn {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-radius: 10px;
+  background-color: #004084;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .btn:hover {
+    background-color: #004c9e;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    width: 720px;
+  }
+  .main-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (max-width: 566px) {
+  .container {
+    max-width: 300px;
+  }
+  .main-title {
+    font-size: 24px;
+  }
+}
+
+.header {
+  padding-top: 39px;
+  padding-bottom: 85px;
+  background: url(../img/header/header-bg.png) no-repeat;
+  background-position: calc(50% + 300px);
+  background-size: contain;
+}
+
+.header-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-contacts__logo img {
+  width: 100%;
+}
+
+.header-contacts__phone {
+  display: flex;
+  align-items: center;
+}
+
+.header-contacts__phone-img {
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.header-contacts__phone-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-contacts__phone-links a {
+  color: #fff;
+}
+
+.header-contacts__phone-links .phone_number {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.header-content {
+  margin-top: 80px;
+}
+
+.header-content__title {
+  margin-bottom: 30px;
+}
+
+.header-content p {
+  font-size: 16px;
+}
+
+.header-content_data {
+  margin-top: 65px;
+  display: flex;
+}
+
+.header-content_data-item {
+  margin-right: 80px;
+}
+
+.header-content_data-item .number {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 35px;
+}
+
+.header-content_data-item p {
+  margin-top: 6px;
+}
+
+.header-content_btn {
+  margin-top: 70px;
+  width: 360px;
+  height: 50px;
+}
+
+@media (max-width: 991px) {
+  .header {
+    background-position: calc(50% + 240px);
+  }
+  .header-content {
+    margin-top: 55px;
+  }
+  .header-content__title {
+    margin-bottom: 20px;
+  }
+  .header-content p {
+    font-size: 14px;
+  }
+  .header-content_data {
+    margin-top: 30px;
+  }
+  .header-content_data-item {
+    margin-right: 55px;
+  }
+  .header-content_data-item .number {
+    font-size: 27px;
+  }
+  .header-content_btn {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 30px 0;
+    background: none;
+  }
+  .header-contacts__logo {
+    width: 180px;
+  }
+  .header-contacts__phone-img {
+    width: auto;
+    height: auto;
+  }
+  .header-contacts__phone-links a {
+    color: #004084;
+  }
+  .header-contacts__phone-links .phone_number {
+    font-size: 14px;
+  }
+  .header-contacts__phone-links .call {
+    display: none;
+  }
+}
+
+@media (max-width: 566px) {
+  .header-contacts__logo {
+    width: 140px;
+  }
+  .header-contacts__phone-img {
+    display: none;
+  }
+  .header-content {
+    margin-top: 30px;
+  }
+  .header-content_data {
+    margin-top: 15px;
+  }
+  .header-content_data-item {
+    margin-right: 20px;
+  }
+  .header-content_data-item:last-child {
+    margin-right: 0;
+  }
+  .header-content_data-item .number {
+    font-size: 22px;
+  }
+  .header-content_btn {
+    margin-top: 30px;
+    width: 100%;
+  }
+}
