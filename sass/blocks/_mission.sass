@@ -1,0 +1,83 @@
+.mission
+  &_title
+    padding: 25px 0
+    color: #fff
+    background-color: $main-blue
+    &_wrap
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &_text
+      display: flex
+      align-items: center
+      & .quote
+        height: 58px
+        font-size: 150px
+        line-height: 35px
+      & .text
+        margin: 0 50px
+        font-size: 16px
+  &_content
+    padding: 35px 0
+    &_wrap
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &_text
+      & p
+        max-width: 315px
+        line-height: 24px
+      & .title
+        margin: 20px 0
+    &_img
+      border-radius: 15px
+      overflow: hidden
+      & img
+        width: 100%
+@media (max-width: 1199px)
+  .mission
+    &_title
+      &_text
+        & .quote
+          height: 53px
+          font-size: 120px
+        & .text
+          margin: 0 10px
+@media (max-width: 991px)
+  .mission
+    &_title
+      &_wrap
+        flex-direction: column
+        align-items: start
+      &_text
+        margin-top: 5px
+        & .quote
+          height: 45px
+          font-size: 85px
+        & .text
+          font-size: 14px
+    &_content
+      &_img
+        width: 310px
+@media (max-width: 767px)
+  .mission
+    &_title
+      &_text
+        & .quote
+          height: 55px
+          font-size: 80px
+    &_content
+      &_wrap
+        flex-direction: column
+      &_text
+        & p
+          line-height: normal
+        & .title
+          margin: 7px 0
+      &_img
+        margin-top: 10px
+@media (max-width: 566px)
+  .mission
+    &_content
+      &_img
+        width: 100%
