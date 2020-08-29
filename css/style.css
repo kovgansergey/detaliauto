@@ -67,6 +67,10 @@ h1, h2 {
   cursor: pointer;
 }
 
+.orange-text {
+  color: #ff5f21;
+}
+
 @media (min-width: 992px) {
   .btn:hover {
     background-color: #004c9e;
@@ -439,5 +443,86 @@ h1, h2 {
 @media (max-width: 767px) {
   .services {
     padding: 30px 0;
+  }
+}
+
+.guide {
+  padding: 20px 0;
+  background: url(../img/guide/bg.png) no-repeat;
+  background-position: calc(100% + 68px) calc(0% - 136px);
+}
+
+.guide_wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.guide_content {
+  max-width: 500px;
+}
+
+.guide_list {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.guide_list span {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 35px;
+}
+
+.guide_btn {
+  margin-top: 30px;
+  width: 260px;
+  height: 50px;
+}
+
+.guide_img {
+  margin: 0 auto;
+}
+
+.guide_img img {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .guide {
+    background-size: 400px auto;
+    background-position: calc(100% + 68px) calc(0% - 100px);
+  }
+  .guide_content {
+    max-width: 420px;
+  }
+  .guide_list span {
+    font-size: 28px;
+  }
+  .guide_img {
+    width: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .guide {
+    background-size: 345px auto;
+  }
+  .guide_img {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 566px) {
+  .guide {
+    background-size: 200px auto;
+    background-position: calc(100% + 52px) calc(0% - 50px);
+  }
+  .guide_list span {
+    font-size: 21px;
+  }
+  .guide_btn {
+    width: 100%;
+  }
+  .guide_img {
+    width: 210px;
   }
 }
