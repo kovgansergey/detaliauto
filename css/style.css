@@ -382,3 +382,62 @@ h1, h2 {
     width: 100%;
   }
 }
+
+.services {
+  padding: 67px 0;
+  background-color: #004084;
+  color: #fff;
+}
+
+.services_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.services_item {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.services_item__img {
+  margin-right: 30px;
+  position: relative;
+  width: 68px;
+}
+
+.services_item__img .img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.services_item__img .point {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.services_item__text {
+  width: 260px;
+  line-height: 24px;
+}
+
+@media (max-width: 1199px) {
+  .services_item__text {
+    width: 200px;
+  }
+}
+
+@media (max-width: 991px) {
+  .services_wrap {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 767px) {
+  .services {
+    padding: 30px 0;
+  }
+}
