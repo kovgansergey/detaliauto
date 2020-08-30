@@ -1,0 +1,47 @@
+.stages
+  padding: 65px 0
+  background: $main-blue url('../img/stages/bg-img.png') right/contain no-repeat
+  color: #fff
+  &_wrap
+    margin-top: 55px
+    display: flex
+    align-items: center
+  &_days
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 470px
+    +bold
+    font-size: 35px
+    text-align: right
+  &_text
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 450px
+  & .opacity
+    opacity: 0.4
+  &_img
+    margin: 0 80px
+// @media (max-width: 1199px)
+@media (max-width: 991px)
+  .stages
+    &_days
+      font-size: 28px
+    &_img
+      margin: 0 50px
+@media (max-width: 767px)
+  .stages
+    padding: 30px 0
+    &_wrap
+      margin-top: 25px
+    &_text
+      width: 310px
+    &_img
+      margin: 0 25px
+@media (max-width: 566px)
+  .stages
+    &_days
+      font-size: 21px
+    &_img
+      margin: 0 10px
