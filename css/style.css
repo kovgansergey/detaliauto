@@ -776,3 +776,39 @@ h1, h2 {
     width: 100%;
   }
 }
+
+.cooperation {
+  padding: 65px 0;
+}
+
+.cooperation_title {
+  max-width: 870px;
+  width: 100%;
+}
+
+.cooperation_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cooperation_item {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.cooperation_item__img {
+  position: relative;
+}
+
+.cooperation_item__img .icon {
+  position: relative;
+}
+
+.cooperation_item__img .point {
+  position: absolute;
+  top: -18px;
+  right: -15px;
+  z-index: -1;
+}
