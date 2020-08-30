@@ -1,0 +1,30 @@
+.offer
+  padding: 30px 0
+  background-color: $main-grey
+  &_wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &_content
+    max-width: 810px
+    width: 100%
+  &_btn
+    margin-top: 35px
+    width: 360px
+    height: 50px
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+@media (max-width: 767px)
+  .offer
+    &_wrap
+      flex-direction: column-reverse
+    &_btn
+      margin-top: 15px
+    &_img
+      width: 130px
+      & img
+        width: 100%
+@media (max-width: 566px)
+  .offer
+    &_btn
+      width: 100%
