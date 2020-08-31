@@ -993,7 +993,7 @@ h1, h2 {
 }
 
 @media (min-width: 992px) {
-  .btn:hover {
+  .cost_btn:hover {
     background-color: #ff713b;
   }
 }
