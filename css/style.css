@@ -796,13 +796,11 @@ h1, h2 {
   margin-top: 45px;
   display: flex;
   align-items: center;
+  width: 33%;
 }
 
 .cooperation_item__img {
-  position: relative;
-}
-
-.cooperation_item__img .icon {
+  margin-right: 35px;
   position: relative;
 }
 
@@ -811,4 +809,134 @@ h1, h2 {
   top: -18px;
   right: -15px;
   z-index: -1;
+}
+
+.cooperation_item__text {
+  line-height: 24px;
+}
+
+.cooperation_item__text span {
+  font-family: 'Roboto Bold', sans-serif;
+}
+
+.cooperation_description {
+  margin-top: 35px;
+  max-width: 815px;
+  width: 100%;
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.cooperation_tables {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cooperation_table {
+  margin-top: 60px;
+  width: 555px;
+  border-radius: 10px;
+  border: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.cooperation_table__title {
+  padding: 30px 100px;
+  background-color: #004084;
+  color: #fff;
+}
+
+.cooperation_table__content {
+  padding: 30px 100px;
+}
+
+.cooperation_table__list {
+  line-height: 20px;
+  list-style-image: url("../img/cooperation/list_marker.png");
+}
+
+.cooperation_table__list li {
+  margin-top: 15px;
+}
+
+.cooperation_table__list li:first-child {
+  margin-top: 0;
+}
+
+.cooperation_table__list .list-title {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 18px;
+  color: #004792;
+}
+
+@media (max-width: 1199px) {
+  .cooperation_item__img {
+    margin-right: 25px;
+  }
+  .cooperation_table {
+    width: 470px;
+  }
+  .cooperation_table__title {
+    padding: 30px 70px;
+  }
+  .cooperation_table__content {
+    padding: 30px 70px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cooperation_item {
+    flex-direction: column;
+  }
+  .cooperation_item__img {
+    margin-right: 0;
+    height: 60px;
+  }
+  .cooperation_item__text {
+    text-align: center;
+  }
+  .cooperation_table {
+    width: 355px;
+  }
+  .cooperation_table__title {
+    padding: 30px 45px;
+  }
+  .cooperation_table__content {
+    padding: 30px 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cooperation {
+    padding: 30px 0;
+  }
+  .cooperation_item {
+    margin-top: 30px;
+    width: 49%;
+  }
+  .cooperation_description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .cooperation_table {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .cooperation_table__title {
+    padding: 15px 45px;
+  }
+  .cooperation_table__content {
+    padding: 15px 45px;
+  }
+}
+
+@media (max-width: 566px) {
+  .cooperation_table__title {
+    padding: 15px 25px;
+  }
+  .cooperation_table__content {
+    padding: 15px 25px;
+  }
 }
