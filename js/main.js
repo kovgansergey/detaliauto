@@ -94,10 +94,6 @@ function maskPhone(selector, masked = '+7 (___) ___ - __ - __') {
 
 // отправка форм
 function sendForm(formID) {
-  const errorMessage = 'Что-то пошло не так...';
-  const loadMessage = 'Загрузка...';
-  const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
-
   const form = document.getElementById(formID);
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = `width: 100%; font-size: 16px; text-align: center;
@@ -121,7 +117,7 @@ function sendForm(formID) {
     });
   }
 
-  function postData(body, outputData, errorData) {
+  function postData(body) {
     const request = new XMLHttpRequest();
 
     request.addEventListener('readystatechange', () => {
@@ -131,16 +127,25 @@ function sendForm(formID) {
       }
 
       if (request.status === 200) {
-        outputData();
         clearInputs();
+        statusMessage.textContent = '';
+        Swal.fire(
+          'Спасибо!',
+          'Мы скоро с вами свяжемся!'
+        );
       } else {
-        errorData(request.status);
+        statusMessage.textContent = '';
+        Swal.fire({
+          icon: 'error',
+          text: 'Что-то пошло не так!'
+        });
+        console.error(request.status);
       }
     });
 
-    request.open('POST', './php/server.php');
-    request.setRequestHeader('Content-Type', 'multipart/form-data');
-    request.send(body);
+    request.open('POST', './php/send.php');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify(body));
   }
 
   form.addEventListener('submit', event => {
@@ -155,17 +160,15 @@ function sendForm(formID) {
     }
 
     form.append(statusMessage);
-    statusMessage.textContent = loadMessage;
+    statusMessage.textContent = 'Отправка...';
     const formData = new FormData(form);
+    const body = {};
 
-    postData(formData,
-      () => {
-        statusMessage.textContent = successMessage;
-      },
-      (error) => {
-        statusMessage.textContent = errorMessage;
-        console.error(error);
-      });
+    for (const val of formData.entries()) {
+      body[val[0]] = val[1];
+    }
+
+    postData(body);
   });
 }
 
