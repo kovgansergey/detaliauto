@@ -1,0 +1,79 @@
+.guide-popup
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 50
+  width: 100vw
+  height: 100vh
+  display: none
+  justify-content: center
+  align-items: center
+  background-color: rgba(0, 0, 0, 0.6)
+  &_dialog
+    padding: 30px
+    position: relative
+    width: 420px
+    border-radius: 10px
+    background-color: #fff
+  &_close
+    position: absolute
+    top: 30px
+    right: 30px
+    border: none
+    outline: none
+    background-color: transparent
+    cursor: pointer
+  &_title
+    padding-bottom: 30px
+    border-bottom: 1px solid #dbdbdb
+    +bold
+    line-height: 26px
+    & .first-title
+      font-size: 25px
+    & .text
+      font-size: 16px
+  &_form
+    padding-top: 30px
+    & input
+      margin-bottom: 10px
+      padding: 0 30px
+      width: 100%
+      height: 50px
+      border-radius: 10px
+      border: 1px solid #dbdbdb
+      background-color: #f2f2f2
+    &__btn
+      width: 100%
+      height: 50px
+    & p
+      margin-top: 30px
+      text-align: center
+      font-size: 12px
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+@media (max-width: 767px)
+  .guide-popup
+    &_dialog
+      padding: 10px
+      width: 300px
+      height: 300px
+    &_close
+      top: 10px
+      right: 10px
+    &_title
+      padding-bottom: 10px
+      line-height: normal
+      & .first-title
+        font-size: 18px
+      & .text
+        font-size: 12px
+    &_form
+      padding-top: 10px
+      & input
+        padding: 0 10px
+        height: 35px
+      &__btn
+        height: 35px
+      & p
+        margin-top: 10px
+// @media (max-width: 566px)
