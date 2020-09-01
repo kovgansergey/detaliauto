@@ -42,6 +42,7 @@
       border-radius: 10px
       border: 1px solid #dbdbdb
       background-color: #f2f2f2
+      outline: none
     &__btn
       width: 100%
       height: 50px
@@ -49,8 +50,47 @@
       margin-top: 30px
       text-align: center
       font-size: 12px
+.consultation-popup
+  display: none
+  position: fixed
+  left: 0
+  bottom: 0
+  z-index: 50
+  width: 100%
+  padding: 30px 0
+  background-color: #fff
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.05)
+  &_wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &_title
+    width: 440px
+    +bold
+    font-size: 25px
+  &_form
+    display: flex
+    align-items: center
+    & input
+      margin-right: 10px
+      padding: 0 20px
+      width: 190px
+      height: 50px
+      border-radius: 10px
+      border: 1px solid #dbdbdb
+      background-color: #f2f2f2
+      outline: none
+    &__btn
+      width: 260px
+      height: 50px
 // @media (max-width: 1199px)
-// @media (max-width: 991px)
+@media (max-width: 991px)
+  .consultation-popup
+    padding: 15px 0 30px
+    &_wrap
+      flex-direction: column
+    &_title
+      margin-bottom: 15px
 @media (max-width: 767px)
   .guide-popup
     &_dialog
@@ -76,4 +116,20 @@
         height: 35px
       & p
         margin-top: 10px
+  .consultation-popup
+    &_title
+      width: 100%
+      font-size: 18px
+    &_form
+      flex-direction: column
+      width: 300px
+      & input
+        margin-right: 0
+        margin-bottom: 10px
+        padding: 0 10px
+        width: 100%
+        height: 35px
+      &__btn
+        width: 100%
+        height: 35px
 // @media (max-width: 566px)

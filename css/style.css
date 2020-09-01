@@ -1134,6 +1134,7 @@ h1, h2 {
   border-radius: 10px;
   border: 1px solid #dbdbdb;
   background-color: #f2f2f2;
+  outline: none;
 }
 
 .guide-popup_form__btn {
@@ -1145,6 +1146,63 @@ h1, h2 {
   margin-top: 30px;
   text-align: center;
   font-size: 12px;
+}
+
+.consultation-popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.consultation-popup_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.consultation-popup_title {
+  width: 440px;
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 25px;
+}
+
+.consultation-popup_form {
+  display: flex;
+  align-items: center;
+}
+
+.consultation-popup_form input {
+  margin-right: 10px;
+  padding: 0 20px;
+  width: 190px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #dbdbdb;
+  background-color: #f2f2f2;
+  outline: none;
+}
+
+.consultation-popup_form__btn {
+  width: 260px;
+  height: 50px;
+}
+
+@media (max-width: 991px) {
+  .consultation-popup {
+    padding: 15px 0 30px;
+  }
+  .consultation-popup_wrap {
+    flex-direction: column;
+  }
+  .consultation-popup_title {
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1179,6 +1237,25 @@ h1, h2 {
   }
   .guide-popup_form p {
     margin-top: 10px;
+  }
+  .consultation-popup_title {
+    width: 100%;
+    font-size: 18px;
+  }
+  .consultation-popup_form {
+    flex-direction: column;
+    width: 300px;
+  }
+  .consultation-popup_form input {
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    width: 100%;
+    height: 35px;
+  }
+  .consultation-popup_form__btn {
+    width: 100%;
+    height: 35px;
   }
 }
 
