@@ -6,6 +6,7 @@
 	<title>Автозапчасти</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -20,7 +21,7 @@
 					</div>
 					<div class="header-contacts__phone-links">
 						<a href="tel:+73834621235" class="phone_number">8 (383) 462-12-35</a>
-						<a href="#" class="call">заказать звонок</a>
+						<a href="#" class="call consultation-btn">заказать звонок</a>
 					</div>
 				</div>
 			</div>
@@ -42,7 +43,7 @@
 						<p>Гарантия окупаемости</p>
 					</div>
 				</div>
-				<button class="btn header-content_btn">Получить бесплатную консультацию</button>
+				<button class="btn header-content_btn consultation-btn">Получить бесплатную консультацию</button>
 			</div>
 			<!-- /.header-content -->
 		</div>
@@ -285,7 +286,7 @@
 				<div class="offer_content">
 					<h2 class="title">Переведи в онлайн свой магазин автозапчастей
 						вместе с  DETALIAUTO.RU</h2>
-					<button class="btn offer_btn">Получить коммерческое предложение</button>
+					<button class="btn offer_btn consultation-btn">Получить коммерческое предложение</button>
 				</div>
 				<!-- /.offer_content -->
 				<div class="offer_img">
@@ -436,7 +437,7 @@
 			<p class="cost_text">Далее вы платите за рекламный бюджет и обслуживание площадки 1% с продаж, но не менее 10.000 рублей в месяц.
 				Эта сумма идет на содержание маркетологов, продвижение сайта и бренда в рекламных сетях Яндекс, Google и 2Гис.
 			</p>
-			<button class="btn cost_btn">Получить бесплатную консультацию</button>
+			<button class="btn cost_btn consultation-btn">Получить бесплатную консультацию</button>
 		</div>
 		<!-- /.container -->
 	</section>
@@ -474,7 +475,7 @@
 			<form class="guide-popup_form">
 				<input type="text" name="user_name" placeholder="Имя" required>
 				<input type="text" name="user_email" placeholder="E-mail" required>
-				<input type="text" name="user_phone" placeholder="+7 (___) ___ - __ - __" required>
+				<input class="phone-user" type="text" name="user_phone" placeholder="+7 (___) ___ - __ - __" required>
 				<button class="btn guide-popup_form__btn">Получить guide</button>
 				<p>Нажимая кнопку, вы даете согласие на обработку
 					персональных данных</p>
@@ -493,7 +494,7 @@
 				<!-- /.consultation-popup_title -->
 				<form class="consultation-popup_form">
 					<input type="text" name="user_name" placeholder="Ваше имя" required>
-					<input type="text" name="user_phone" placeholder="+7 (___) ___ - __ - __" required>
+					<input class="phone-user" type="text" name="user_phone" placeholder="+7 (___) ___ - __ - __" required>
 					<button class="btn consultation-popup_form__btn">Получить консультацию</button>
 				</form>
 				<!-- /.consultation-popup_form -->
