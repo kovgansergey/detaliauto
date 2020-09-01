@@ -92,7 +92,80 @@ function maskPhone(selector, masked = '+7 (___) ___ - __ - __') {
 
 }
 
+// отправка форм
+function sendForm(formID) {
+  const errorMessage = 'Что-то пошло не так...';
+  const loadMessage = 'Загрузка...';
+  const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+
+  const form = document.getElementById(formID);
+  const statusMessage = document.createElement('div');
+  statusMessage.style.cssText = `width: 100%; font-size: 16px; text-align: center;
+    position: absolute; left: 0; bottom: 5px`;
+
+  form.addEventListener('input', event => {
+    const target = event.target;
+
+    if (target.name === 'user_name' || target.name === 'user_message') {
+      target.value = target.value.replace(/[^а-яё\s]/i, '');
+    }
+  });
+
+  function clearInputs() {
+    const formInputs = form.querySelectorAll('input');
+
+    formInputs.forEach(item => {
+      item.value = '';
+    });
+  }
+
+  function postData(body, outputData, errorData) {
+    const request = new XMLHttpRequest();
+
+    request.addEventListener('readystatechange', () => {
+
+      if (request.readyState !== 4) {
+        return;
+      }
+
+      if (request.status === 200) {
+        outputData();
+        clearInputs();
+      } else {
+        errorData(request.status);
+      }
+    });
+
+    request.open('POST', './php/server.php');
+    request.setRequestHeader('Content-Type', 'multipart/form-data');
+    request.send(body);
+  }
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    form.append(statusMessage);
+    statusMessage.textContent = loadMessage;
+    const formData = new FormData(form);
+
+    postData(formData,
+      () => {
+        statusMessage.textContent = successMessage;
+      },
+      (error) => {
+        statusMessage.textContent = errorMessage;
+        console.error(error);
+      });
+  });
+}
+
+document.body.addEventListener('focus', event => {
+  const target = event.target;
+  console.log(target);
+});
+
 maskPhone('.phone-user');
+sendForm('form1');
+sendForm('form2');
 
 document.addEventListener('click', event => {
   const target = event.target;
