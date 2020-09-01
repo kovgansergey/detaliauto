@@ -106,7 +106,7 @@ function sendForm(formID) {
   form.addEventListener('input', event => {
     const target = event.target;
 
-    if (target.name === 'user_name' || target.name === 'user_message') {
+    if (target.name === 'user_name') {
       target.value = target.value.replace(/[^а-яё\s]/i, '');
     }
   });
@@ -116,6 +116,8 @@ function sendForm(formID) {
 
     formInputs.forEach(item => {
       item.value = '';
+      item.style.outline = 'none';
+      item.style.boxShadow = 'none';
     });
   }
 
@@ -143,6 +145,15 @@ function sendForm(formID) {
 
   form.addEventListener('submit', event => {
     event.preventDefault();
+
+    const phoneInput = form.querySelector('.phone-user');
+    if (phoneInput.value.length !== 22) {
+      phoneInput.style.border = '1px solid red';
+      return;
+    } else {
+      phoneInput.style.border = '';
+    }
+
     form.append(statusMessage);
     statusMessage.textContent = loadMessage;
     const formData = new FormData(form);
@@ -157,11 +168,6 @@ function sendForm(formID) {
       });
   });
 }
-
-document.body.addEventListener('focus', event => {
-  const target = event.target;
-  console.log(target);
-});
 
 maskPhone('.phone-user');
 sendForm('form1');
