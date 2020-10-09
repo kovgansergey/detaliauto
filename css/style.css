@@ -686,6 +686,14 @@ h1, h2 {
   text-align: right;
 }
 
+.stages_days__item {
+  opacity: 0.4;
+}
+
+.stages_days__item.active {
+  opacity: 1;
+}
+
 .stages_text {
   display: flex;
   flex-direction: column;
@@ -693,12 +701,112 @@ h1, h2 {
   height: 450px;
 }
 
-.stages .opacity {
+.stages_text__item {
   opacity: 0.4;
 }
 
+.stages_text__item.active {
+  opacity: 1;
+}
+
 .stages_img {
-  margin: 0 80px;
+  position: relative;
+  margin: 0 -140px;
+  width: 480px;
+  transform: rotate(90deg);
+}
+
+.stages_img__bg {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  z-index: 1;
+  width: calc(66% + 24px);
+  border: none;
+  border-top: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.stages_img__progress {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  z-index: 1;
+  width: calc(33% - 24px);
+  border: none;
+  border-top: 2px dashed white;
+}
+
+.stages_img__dots {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.stages_img__dot {
+  visibility: hidden;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5f21;
+  border: 6px solid #fff;
+  border-radius: 50%;
+}
+
+.stages_img__dot.active {
+  visibility: visible;
+}
+
+input[type='range'] {
+  position: relative;
+  z-index: 5;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 48px;
+  background: url("../img/stages/car.png");
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  height: 30px;
+  width: 48px;
+  background: url("../img/stages/car.png");
+  cursor: pointer;
+  border: none;
+}
+
+input[type='range']::-ms-thumb {
+  height: 30px;
+  width: 48px;
+  background: url("../img/stages/car.png");
+  cursor: pointer;
+  border: none;
 }
 
 @media (max-width: 991px) {
@@ -706,7 +814,7 @@ h1, h2 {
     font-size: 28px;
   }
   .stages_img {
-    margin: 0 50px;
+    margin: 0 -175px;
   }
 }
 
@@ -721,16 +829,20 @@ h1, h2 {
     width: 310px;
   }
   .stages_img {
-    margin: 0 25px;
+    margin: 0 -205px;
   }
 }
 
 @media (max-width: 566px) {
   .stages_days {
+    width: 60px;
     font-size: 21px;
   }
+  .stages_text {
+    width: 180px;
+  }
   .stages_img {
-    margin: 0 10px;
+    margin: 0 -210px;
   }
 }
 

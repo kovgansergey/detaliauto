@@ -1,5 +1,42 @@
 'use strict';
 
+// движение машинки
+const stagesRange = document.querySelector('.stages_range'),
+  stagesDays = document.querySelectorAll('.stages_days__item'),
+  stagesText = document.querySelectorAll('.stages_text__item'),
+  stagesDot = document.querySelectorAll('.stages_img__dot'),
+  stagesBg = document.querySelector('.stages_img__bg'),
+  stagesProgress = document.querySelector('.stages_img__progress');
+
+stagesRange.addEventListener('input', () => {
+  stagesDays.forEach((item, i) => {
+    item.classList.remove('active');
+
+    if (i < stagesRange.value) {
+      item.classList.add('active');
+    }
+  });
+
+  stagesText.forEach((item, i) => {
+    item.classList.remove('active');
+
+    if (i < stagesRange.value) {
+      item.classList.add('active');
+    }
+  });
+
+  stagesDot.forEach((item, i) => {
+    item.classList.remove('active');
+
+    if (i < stagesRange.value) {
+      item.classList.add('active');
+    }
+  });
+
+  stagesProgress.style.width = 'calc(' + stagesRange.value / 9 * 100 + '% - 24px)';
+  stagesBg.style.width = 'calc(' + (1 - stagesRange.value / 9) * 100 + '% + 24px)';
+});
+
 const guidePopup = document.querySelector('.guide-popup'),
   consultationPopup = document.querySelector('.consultation-popup');
 
